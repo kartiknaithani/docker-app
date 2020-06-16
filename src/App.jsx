@@ -16,7 +16,7 @@ class App extends Component {
     const { data } = this.state;
     return (
       <div className ={styles.container}>
-        <h1>Environment variable fix updated text</h1>
+        <h1>I was changed on feature branch</h1>
         <Cards data={data} />
       </div>
     );
