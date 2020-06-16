@@ -9,16 +9,15 @@ script:
     - docker run -e CI=true kartik27/docker-app npm run test -- --coverage
 
 
-# deploy:
-#     provider: elasticbeanstalk
-#     edge: true
-#     region: "us-east-2"
-#     app: "docker-app"
-#     env: "DockerApp-env"
-#     bucket_name: "elasticbeanstalk-us-east-2-567886408639"
-#     bucket_path: "docker-app"
-#     on:
-#         branch: master
-#         access_key_id: $AWS_ACCESS_KEY
-#         secret_access_key:
-#             secure: "$AWS_SECRET_KEY"
+deploy:
+    provider: elasticbeanstalk
+    region: "us-east-2"
+    app: "docker-app"
+    env: "DockerApp-env"
+    bucket_name: "elasticbeanstalk-us-east-2-567886408639"
+    bucket_path: "docker-app"
+    on:
+        branch: master
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+        
